@@ -1,6 +1,6 @@
 {% extends "main.html" %}
 {% block content %}
-	<div class="row top-menu">
+	<div class="row top-recipe">
 		<div class="col-md-10"></div>
 		<div class="col-md-2 text-right">
 			<a href="{{url_for('showLogin')}}">Click Here to Log in </a>
@@ -12,7 +12,7 @@
 	<div class="row banner main">
 		<div class="col-md-1"></div>
 		<div class="col-md-11 padding-none">
-			<h1>Restaurants</h1>
+			<h1>Ingredients</h1>
 		</div>
 	</div>
 
@@ -39,12 +39,12 @@
 		</div>
 		<div class="col-md-1"></div>
 	</div>
-	{% for restaurant in restaurants %}
-		<a href = "{{url_for('showMenu', restaurant_id = restaurant.id)}}">
+	{% for ingredient in ingredients %}
+		<a href = "{{url_for('showRecipe', ingredient_id = ingredient.id)}}">
 			<div class="row">
 				<div class="col-md-1"></div>
-					<div class="col-md-10 restaurant-list">
-						<h3>{{restaurant.name}}</h3>
+					<div class="col-md-10 ingredient-list">
+						<h3>{{ingredient.name}}</h3>
 					</div>
 				<div class="col-md-1"></div>
 			</div>
