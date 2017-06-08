@@ -57,11 +57,11 @@
 			<div class="col-md-3">
 				<h2>Appetizers</h2>
 					{% for i in items %}
-						{% if i.course == 'Appetizer' %}
+						{% if i.meal == 'Lunch' %}
 							<div class="recipe-item">
 								<h3>{{i.name}}</h3>
-								<p>{{i.description}}</p>
-								<p class="recipe-price">{{i.price}}</p>
+								<p>{{i.method}}</p>
+								<p class="recipe-time_needed">{{i.time_needed}}</p>
 								<a href='{{url_for('editRecipeItem', ingredient_id = ingredient.id, recipe_id=i.id ) }}'>Edit</a> | 
 								<a href='{{url_for('deleteRecipeItem', ingredient_id = ingredient.id, recipe_id=i.id ) }}'>Delete</a>
 							</div>
@@ -71,11 +71,11 @@
 			<div class="col-md-4">			
 				<h2>Entrees</h2>
 					{% for i in items %}
-						{% if i.course == 'Entree' %}
+						{% if i.meal == 'Dinner' %}
 						<div class="recipe-item">
 							<h3>{{i.name}}</h3>
-							<p>{{i.description}}</p>
-							<p class="recipe-price">{{i.price}}</p>
+							<p>{{i.method}}</p>
+							<p class="recipe-time_needed">{{i.time_needed}}</p>
 							<a href='{{url_for('editRecipeItem', ingredient_id = ingredient.id, recipe_id=i.id ) }}'>Edit</a> | 
 							<a href='{{url_for('deleteRecipeItem', ingredient_id = ingredient.id, recipe_id=i.id ) }}'>Delete</a>
 						</div>
@@ -85,11 +85,11 @@
 			<div class="col-md-3">
 				<h2>Desserts</h2>
 					{% for i in items %}
-						{% if i.course == 'Dessert' %}
+						{% if i.meal == 'Breakfast' %}
 						<div class="recipe-item">
 							<h3>{{i.name}}</h3>
-							<p>{{i.description}}</p>
-							<p class="recipe-price">{{i.price}}</p>
+							<p>{{i.method}}</p>
+							<p class="recipe-time_needed">{{i.time_needed}}</p>
 							<a href='{{url_for('editRecipeItem', ingredient_id = ingredient.id, recipe_id=i.id ) }}'>Edit</a> | 
 							<a href='{{url_for('deleteRecipeItem', ingredient_id = ingredient.id, recipe_id=i.id ) }}'>Delete</a>
 						</div>
@@ -97,11 +97,11 @@
 					{% endfor %}
 				<h2>Beverages</h2>
 					{% for i in items %}
-						{% if i.course == 'Beverage' %}
+						{% if i.meal == 'Beverage' %}
 						<div class="recipe-item">
 							<h3>{{i.name}}</h3>
-							<p>{{i.description}}</p>
-							<p class="recipe-price">{{i.price}}</p>
+							<p>{{i.method}}</p>
+							<p class="recipe-time_needed">{{i.time_needed}}</p>
 							<a href='{{url_for('editRecipeItem', ingredient_id = ingredient.id, recipe_id=i.id ) }}'>Edit</a> | 
 							<a href='{{url_for('deleteRecipeItem', ingredient_id = ingredient.id, recipe_id=i.id ) }}'>Delete</a>
 						</div>

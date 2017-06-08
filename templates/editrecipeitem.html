@@ -16,33 +16,33 @@
 					<label for="name">Name:</label>
 					<input type ="text" maxlength="100" class="form-control" name="name" value="{{item.name }}">
 
-					<label for="description">Description:</label>
-					<textarea class="form-control" maxlength="250" rows="3" name="description">{{item.description}}</textarea>
+					<label for="method">Method:</label>
+					<textarea class="form-control" maxlength="250" rows="3" name="method">{{item.method}}</textarea>
 
-					<label for="price">Price:</label>
+					<label for="time_needed">Time_needed:</label>
 					<div class="input-group">
-						<div class="input-group-addon">$</div>
-						<input type ="text" maxlength="10" class="form-control" name="price" value="{{item.price}}">
+						<div class="input-group-addon">mins</div>
+						<input type ="text" maxlength="10" class="form-control" name="time_needed" value="{{item.time_needed}}">
 					</div>
-					<label for="course">Course:</label>
+					<label for="meal">Meal:</label>
 					<div class="radio">
 					  <label>
-					    <input type="radio" name="course" id="course1" value="Appetizer" {% if item.course == 'Appetizer'%}checked{%endif%}>Appetizer
+					    <input type="radio" name="meal" id="meal1" value="Lunch" {% if item.meal == 'Lunch'%}checked{%endif%}>Lunch
 					  </label>
 					</div>
 					<div class="radio">
 					  <label>
-					    <input type="radio" name="course" id="course2" value="Entree" {% if item.course == 'Entree' %}checked{%endif%}>Entree
+					    <input type="radio" name="meal" id="meal2" value="Dinner" {% if item.meal == 'Dinner' %}checked{%endif%}>Dinner
 					  </label>
 					</div>
 					<div class="radio">
 					  <label>
-					    <input type="radio" name="course" id="course3" value="Dessert" {% if item.course == 'Dessert'%}checked{%endif%}>Dessert
+					    <input type="radio" name="meal" id="meal3" value="Breakfast" {% if item.meal == 'Breakfast'%}checked{%endif%}>Breakfast
 					  </label>
 					</div>
 					<div class="radio">
 					  <label>
-					    <input type="radio" name="course" id="course4" value="Beverage" {%if item.course =='Beverage'%}checked{%endif%}>Beverage
+					    <input type="radio" name="meal" id="meal4" value="Beverage" {%if item.meal =='Beverage'%}checked{%endif%}>Beverage
 					  </label>
 					</div>
 					<button type="submit" class="btn btn-default" id="submit" type="submit">

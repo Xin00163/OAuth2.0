@@ -36,9 +36,9 @@ class RecipeItem(Base):
 
     name =Column(String(80), nullable = False)
     id = Column(Integer, primary_key = True)
-    description = Column(String(250))
-    price = Column(String(8))
-    course = Column(String(250))
+    method = Column(String(250))
+    time_needed = Column(String(8))
+    meal = Column(String(250))
     ingredient_id = Column(Integer,ForeignKey('ingredient.id'))
     ingredient = relationship(Ingredient)
     user_id = Column(Integer, ForeignKey('user.id'))
@@ -49,10 +49,10 @@ class RecipeItem(Base):
        """Return object data in easily serializeable format"""
        return {
            'name'         : self.name,
-           'description'         : self.description,
+           'method'         : self.method,
            'id'         : self.id,
-           'price'         : self.price,
-           'course'         : self.course,
+           'time_needed'         : self.time_needed,
+           'meal'         : self.meal,
        }
 
 

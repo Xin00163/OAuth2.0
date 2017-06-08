@@ -20,68 +20,68 @@ session = DBSession()
 
 
 # Create dummy user
-User1 = User(name="Robo Barista", email="tinnyTim@udacity.com",
-             picture='https://pbs.twimg.com/profile_images/2671170543/18debd694829ed78203a5a36dd364160_400x400.png')
-session.add(User1)
-session.commit()
+# User1 = User(name="Robo Barista", email="tinnyTim@udacity.com",
+#              picture='https://pbs.twimg.com/profile_images/2671170543/18debd694829ed78203a5a36dd364160_400x400.png')
+# session.add(User1)
+# session.commit()
 
 # Recipe for UrbanBurger
-ingredient1 = Ingredient(user_id=1, name="Urban Burger")
+ingredient1 = Ingredient(user_id=1, name="Beef")
 
 session.add(ingredient1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", description="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     price="$7.50", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Quick Beef Stir Fry", method="Juicy grilled veggie patty with tomato mayo and lettuce",
+                     time_needed="$7.50", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="French Fries", description="with garlic and parmesan",
-                     price="$2.99", course="Appetizer", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="French Fries", method="with garlic and parmesan",
+                     time_needed="$2.99", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Chicken Burger", description="Juicy grilled chicken patty with tomato mayo and lettuce",
-                     price="$5.50", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Chicken Burger", method="Juicy grilled chicken patty with tomato mayo and lettuce",
+                     time_needed="$5.50", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem3 = RecipeItem(user_id=1, name="Chocolate Cake", description="fresh baked and served with ice cream",
-                     price="$3.99", course="Dessert", ingredient=ingredient1)
+recipeItem3 = RecipeItem(user_id=1, name="Chocolate Cake", method="fresh baked and served with ice cream",
+                     time_needed="$3.99", meal="Breakfast", ingredient=ingredient1)
 
 session.add(recipeItem3)
 session.commit()
 
-recipeItem4 = RecipeItem(user_id=1, name="Sirloin Burger", description="Made with grade A beef",
-                     price="$7.99", course="Entree", ingredient=ingredient1)
+recipeItem4 = RecipeItem(user_id=1, name="Sirloin Burger", method="Made with grade A beef",
+                     time_needed="$7.99", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem4)
 session.commit()
 
-recipeItem5 = RecipeItem(user_id=1, name="Root Beer", description="16oz of refreshing goodness",
-                     price="$1.99", course="Beverage", ingredient=ingredient1)
+recipeItem5 = RecipeItem(user_id=1, name="Root Beer", method="16oz of refreshing goodness",
+                     time_needed="$1.99", meal="Beverage", ingredient=ingredient1)
 
 session.add(recipeItem5)
 session.commit()
 
-recipeItem6 = RecipeItem(user_id=1, name="Iced Tea", description="with Lemon",
-                     price="$.99", course="Beverage", ingredient=ingredient1)
+recipeItem6 = RecipeItem(user_id=1, name="Iced Tea", method="with Lemon",
+                     time_needed="$.99", meal="Beverage", ingredient=ingredient1)
 
 session.add(recipeItem6)
 session.commit()
 
 recipeItem7 = RecipeItem(user_id=1, name="Grilled Cheese Sandwich",
-                     description="On texas toast with American Cheese", price="$3.49", course="Entree", ingredient=ingredient1)
+                     method="On texas toast with American Cheese", time_needed="$3.49", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem7)
 session.commit()
 
-recipeItem8 = RecipeItem(user_id=1, name="Veggie Burger", description="Made with freshest of ingredients and home grown spices",
-                     price="$5.99", course="Entree", ingredient=ingredient1)
+recipeItem8 = RecipeItem(user_id=1, name="Veggie Burger", method="Made with freshest of ingredients and home grown spices",
+                     time_needed="$5.99", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem8)
 session.commit()
@@ -94,38 +94,38 @@ session.add(ingredient2)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="Chicken Stir Fry", description="With your choice of noodles vegetables and sauces",
-                     price="$7.99", course="Entree", ingredient=ingredient2)
+recipeItem1 = RecipeItem(user_id=1, name="Chicken Stir Fry", method="With your choice of noodles vegetables and sauces",
+                     time_needed="$7.99", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem1)
 session.commit()
 
 recipeItem2 = RecipeItem(user_id=1, name="Peking Duck",
-                     description=" A famous duck dish from Beijing[1] that has been prepared since the imperial era. The meat is prized for its thin, crisp skin, with authentic versions of the dish serving mostly the skin and little meat, sliced in front of the diners by the cook", price="$25", course="Entree", ingredient=ingredient2)
+                     method=" A famous duck dish from Beijing[1] that has been prepared since the imperial era. The meat is prized for its thin, crisp skin, with authentic versions of the dish serving mostly the skin and little meat, sliced in front of the diners by the cook", time_needed="$25", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem3 = RecipeItem(user_id=1, name="Spicy Tuna Roll", description="Seared rare ahi, avocado, edamame, cucumber with wasabi soy sauce ",
-                     price="15", course="Entree", ingredient=ingredient2)
+recipeItem3 = RecipeItem(user_id=1, name="Spicy Tuna Roll", method="Seared rare ahi, avocado, edamame, cucumber with wasabi soy sauce ",
+                     time_needed="15", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem3)
 session.commit()
 
-recipeItem4 = RecipeItem(user_id=1, name="Nepali Momo ", description="Steamed dumplings made with vegetables, spices and meat. ",
-                     price="12", course="Entree", ingredient=ingredient2)
+recipeItem4 = RecipeItem(user_id=1, name="Nepali Momo ", method="Steamed dumplings made with vegetables, spices and meat. ",
+                     time_needed="12", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem4)
 session.commit()
 
-recipeItem5 = RecipeItem(user_id=1, name="Beef Noodle Soup", description="A Chinese noodle soup made of stewed or red braised beef, beef broth, vegetables and Chinese noodles.",
-                     price="14", course="Entree", ingredient=ingredient2)
+recipeItem5 = RecipeItem(user_id=1, name="Beef Noodle Soup", method="A Chinese noodle soup made of stewed or red braised beef, beef broth, vegetables and Chinese noodles.",
+                     time_needed="14", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem5)
 session.commit()
 
-recipeItem6 = RecipeItem(user_id=1, name="Ramen", description="a Japanese noodle soup dish. It consists of Chinese-style wheat noodles served in a meat- or (occasionally) fish-based broth, often flavored with soy sauce or miso, and uses toppings such as sliced pork, dried seaweed, kamaboko, and green onions.",
-                     price="12", course="Entree", ingredient=ingredient2)
+recipeItem6 = RecipeItem(user_id=1, name="Ramen", method="a Japanese noodle soup dish. It consists of Chinese-style wheat noodles served in a meat- or (occasionally) fish-based broth, often flavored with soy sauce or miso, and uses toppings such as sliced pork, dried seaweed, kamaboko, and green onions.",
+                     time_needed="12", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem6)
 session.commit()
@@ -138,32 +138,32 @@ session.add(ingredient1)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="Pho", description="a Vietnamese noodle soup consisting of broth, linguine-shaped rice noodles called banh pho, a few herbs, and meat.",
-                     price="$8.99", course="Entree", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Pho", method="a Vietnamese noodle soup consisting of broth, linguine-shaped rice noodles called banh pho, a few herbs, and meat.",
+                     time_needed="$8.99", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Chinese Dumplings", description="a common Chinese dumpling which generally consists of minced meat and finely chopped vegetables wrapped into a piece of dough skin. The skin can be either thin and elastic or thicker.",
-                     price="$6.99", course="Appetizer", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Chinese Dumplings", method="a common Chinese dumpling which generally consists of minced meat and finely chopped vegetables wrapped into a piece of dough skin. The skin can be either thin and elastic or thicker.",
+                     time_needed="$6.99", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem3 = RecipeItem(user_id=1, name="Gyoza", description="light seasoning of Japanese gyoza with salt and soy sauce, and in a thin gyoza wrapper",
-                     price="$9.95", course="Entree", ingredient=ingredient1)
+recipeItem3 = RecipeItem(user_id=1, name="Gyoza", method="light seasoning of Japanese gyoza with salt and soy sauce, and in a thin gyoza wrapper",
+                     time_needed="$9.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem3)
 session.commit()
 
-recipeItem4 = RecipeItem(user_id=1, name="Stinky Tofu", description="Taiwanese dish, deep fried fermented tofu served with pickled cabbage.",
-                     price="$6.99", course="Entree", ingredient=ingredient1)
+recipeItem4 = RecipeItem(user_id=1, name="Stinky Tofu", method="Taiwanese dish, deep fried fermented tofu served with pickled cabbage.",
+                     time_needed="$6.99", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem4)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", description="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     price="$9.50", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", method="Juicy grilled veggie patty with tomato mayo and lettuce",
+                     time_needed="$9.50", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
@@ -176,38 +176,38 @@ session.add(ingredient1)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="Tres Leches Cake", description="Rich, luscious sponge cake soaked in sweet milk and topped with vanilla bean whipped cream and strawberries.",
-                     price="$2.99", course="Dessert", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Tres Leches Cake", method="Rich, luscious sponge cake soaked in sweet milk and topped with vanilla bean whipped cream and strawberries.",
+                     time_needed="$2.99", meal="Breakfast", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Mushroom risotto", description="Portabello mushrooms in a creamy risotto",
-                     price="$5.99", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Mushroom risotto", method="Portabello mushrooms in a creamy risotto",
+                     time_needed="$5.99", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
 
 recipeItem3 = RecipeItem(user_id=1, name="Honey Boba Shaved Snow",
-                     description="Milk snow layered with honey boba, jasmine tea jelly, grass jelly, caramel, cream, and freshly made mochi", price="$4.50", course="Dessert", ingredient=ingredient1)
+                     method="Milk snow layered with honey boba, jasmine tea jelly, grass jelly, caramel, cream, and freshly made mochi", time_needed="$4.50", meal="Breakfast", ingredient=ingredient1)
 
 session.add(recipeItem3)
 session.commit()
 
-recipeItem4 = RecipeItem(user_id=1, name="Cauliflower Manchurian", description="Golden fried cauliflower florets in a midly spiced soya,garlic sauce cooked with fresh cilantro, celery, chilies,ginger & green onions",
-                     price="$6.95", course="Appetizer", ingredient=ingredient1)
+recipeItem4 = RecipeItem(user_id=1, name="Cauliflower Manchurian", method="Golden fried cauliflower florets in a midly spiced soya,garlic sauce cooked with fresh cilantro, celery, chilies,ginger & green onions",
+                     time_needed="$6.95", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem4)
 session.commit()
 
-recipeItem5 = RecipeItem(user_id=1, name="Aloo Gobi Burrito", description="Vegan goodness. Burrito filled with rice, garbanzo beans, curry sauce, potatoes (aloo), fried cauliflower (gobi) and chutney. Nom Nom",
-                     price="$7.95", course="Entree", ingredient=ingredient1)
+recipeItem5 = RecipeItem(user_id=1, name="Aloo Gobi Burrito", method="Vegan goodness. Burrito filled with rice, garbanzo beans, curry sauce, potatoes (aloo), fried cauliflower (gobi) and chutney. Nom Nom",
+                     time_needed="$7.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem5)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", description="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     price="$6.80", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", method="Juicy grilled veggie patty with tomato mayo and lettuce",
+                     time_needed="$6.80", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
@@ -220,32 +220,32 @@ session.add(ingredient1)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="Shellfish Tower", description="Lobster, shrimp, sea snails, crawfish, stacked into a delicious tower",
-                     price="$13.95", course="Entree", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Shellfish Tower", method="Lobster, shrimp, sea snails, crawfish, stacked into a delicious tower",
+                     time_needed="$13.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Chicken and Rice", description="Chicken... and rice",
-                     price="$4.95", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Chicken and Rice", method="Chicken... and rice",
+                     time_needed="$4.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem3 = RecipeItem(user_id=1, name="Mom's Spaghetti", description="Spaghetti with some incredible tomato sauce made by mom",
-                     price="$6.95", course="Entree", ingredient=ingredient1)
+recipeItem3 = RecipeItem(user_id=1, name="Mom's Spaghetti", method="Spaghetti with some incredible tomato sauce made by mom",
+                     time_needed="$6.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem3)
 session.commit()
 
 recipeItem4 = RecipeItem(user_id=1, name="Choc Full O\' Mint (Smitten\'s Fresh Mint Chip ice cream)",
-                     description="Milk, cream, salt, ..., Liquid nitrogen magic", price="$3.95", course="Dessert", ingredient=ingredient1)
+                     method="Milk, cream, salt, ..., Liquid nitrogen magic", time_needed="$3.95", meal="Breakfast", ingredient=ingredient1)
 
 session.add(recipeItem4)
 session.commit()
 
-recipeItem5 = RecipeItem(user_id=1, name="Tonkatsu Ramen", description="Noodles in a delicious pork-based broth with a soft-boiled egg",
-                     price="$7.95", course="Entree", ingredient=ingredient1)
+recipeItem5 = RecipeItem(user_id=1, name="Tonkatsu Ramen", method="Noodles in a delicious pork-based broth with a soft-boiled egg",
+                     time_needed="$7.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem5)
 session.commit()
@@ -258,32 +258,32 @@ session.add(ingredient1)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="Lamb Curry", description="Slow cook that thang in a pool of tomatoes, onions and alllll those tasty Indian spices. Mmmm.",
-                     price="$9.95", course="Entree", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Lamb Curry", method="Slow cook that thang in a pool of tomatoes, onions and alllll those tasty Indian spices. Mmmm.",
+                     time_needed="$9.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Chicken Marsala", description="Chicken cooked in Marsala wine sauce with mushrooms",
-                     price="$7.95", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Chicken Marsala", method="Chicken cooked in Marsala wine sauce with mushrooms",
+                     time_needed="$7.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem3 = RecipeItem(user_id=1, name="Potstickers", description="Delicious chicken and veggies encapsulated in fried dough.",
-                     price="$6.50", course="Appetizer", ingredient=ingredient1)
+recipeItem3 = RecipeItem(user_id=1, name="Potstickers", method="Delicious chicken and veggies encapsulated in fried dough.",
+                     time_needed="$6.50", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem3)
 session.commit()
 
-recipeItem4 = RecipeItem(user_id=1, name="Nigiri Sampler", description="Maguro, Sake, Hamachi, Unagi, Uni, TORO!",
-                     price="$6.75", course="Appetizer", ingredient=ingredient1)
+recipeItem4 = RecipeItem(user_id=1, name="Nigiri Sampler", method="Maguro, Sake, Hamachi, Unagi, Uni, TORO!",
+                     time_needed="$6.75", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem4)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", description="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     price="$7.00", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", method="Juicy grilled veggie patty with tomato mayo and lettuce",
+                     time_needed="$7.00", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
@@ -296,44 +296,44 @@ session.add(ingredient1)
 session.commit()
 
 recipeItem9 = RecipeItem(user_id=1, name="Chicken Fried Steak",
-                     description="Fresh battered sirloin steak fried and smothered with cream gravy", price="$8.99", course="Entree", ingredient=ingredient1)
+                     method="Fresh battered sirloin steak fried and smothered with cream gravy", time_needed="$8.99", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem9)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="Boysenberry Sorbet", description="An unsettlingly huge amount of ripe berries turned into frozen (and seedless) awesomeness",
-                     price="$2.99", course="Dessert", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Boysenberry Sorbet", method="An unsettlingly huge amount of ripe berries turned into frozen (and seedless) awesomeness",
+                     time_needed="$2.99", meal="Breakfast", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Broiled salmon", description="Salmon fillet marinated with fresh herbs and broiled hot & fast",
-                     price="$10.95", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Broiled salmon", method="Salmon fillet marinated with fresh herbs and broiled hot & fast",
+                     time_needed="$10.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
 
 recipeItem3 = RecipeItem(user_id=1, name="Morels on toast (seasonal)",
-                     description="Wild morel mushrooms fried in butter, served on herbed toast slices", price="$7.50", course="Appetizer", ingredient=ingredient1)
+                     method="Wild morel mushrooms fried in butter, served on herbed toast slices", time_needed="$7.50", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem3)
 session.commit()
 
-recipeItem4 = RecipeItem(user_id=1, name="Tandoori Chicken", description="Chicken marinated in yoghurt and seasoned with a spicy mix(chilli, tamarind among others) and slow cooked in a cylindrical clay or metal oven which gets its heat from burning charcoal.",
-                     price="$8.95", course="Entree", ingredient=ingredient1)
+recipeItem4 = RecipeItem(user_id=1, name="Tandoori Chicken", method="Chicken marinated in yoghurt and seasoned with a spicy mix(chilli, tamarind among others) and slow cooked in a cylindrical clay or metal oven which gets its heat from burning charcoal.",
+                     time_needed="$8.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem4)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", description="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     price="$9.50", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", method="Juicy grilled veggie patty with tomato mayo and lettuce",
+                     time_needed="$9.50", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem10 = RecipeItem(user_id=1, name="Spinach Ice Cream", description="vanilla ice cream made with organic spinach leaves",
-                      price="$1.99", course="Dessert", ingredient=ingredient1)
+recipeItem10 = RecipeItem(user_id=1, name="Spinach Ice Cream", method="vanilla ice cream made with organic spinach leaves",
+                      time_needed="$1.99", meal="Breakfast", ingredient=ingredient1)
 
 session.add(recipeItem10)
 session.commit()
@@ -347,13 +347,13 @@ session.commit()
 
 
 recipeItem1 = RecipeItem(user_id=1, name="Super Burrito Al Pastor",
-                     description="Marinated Pork, Rice, Beans, Avocado, Cilantro, Salsa, Tortilla", price="$5.95", course="Entree", ingredient=ingredient1)
+                     method="Marinated Pork, Rice, Beans, Avocado, Cilantro, Salsa, Tortilla", time_needed="$5.95", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Cachapa", description="Golden brown, corn-based Venezuelan pancake; usually stuffed with queso telita or queso de mano, and possibly lechon. ",
-                     price="$7.99", course="Entree", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Cachapa", method="Golden brown, corn-based Venezuelan pancake; usually stuffed with queso telita or queso de mano, and possibly lechon. ",
+                     time_needed="$7.99", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
@@ -363,21 +363,21 @@ ingredient1 = Ingredient(user_id=1, name="State Bird Provisions")
 session.add(ingredient1)
 session.commit()
 
-recipeItem1 = RecipeItem(user_id=1, name="Chantrelle Toast", description="Crispy Toast with Sesame Seeds slathered with buttery chantrelle mushrooms",
-                     price="$5.95", course="Appetizer", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Chantrelle Toast", method="Crispy Toast with Sesame Seeds slathered with buttery chantrelle mushrooms",
+                     time_needed="$5.95", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit
 
 recipeItem1 = RecipeItem(user_id=1, name="Guanciale Chawanmushi",
-                     description="Japanese egg custard served hot with spicey Italian Pork Jowl (guanciale)", price="$6.95", course="Dessert", ingredient=ingredient1)
+                     method="Japanese egg custard served hot with spicey Italian Pork Jowl (guanciale)", time_needed="$6.95", meal="Breakfast", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()
 
 
 recipeItem1 = RecipeItem(user_id=1, name="Lemon Curd Ice Cream Sandwich",
-                     description="Lemon Curd Ice Cream Sandwich on a chocolate macaron with cardamom meringue and cashews", price="$4.25", course="Dessert", ingredient=ingredient1)
+                     method="Lemon Curd Ice Cream Sandwich on a chocolate macaron with cardamom meringue and cashews", time_needed="$4.25", meal="Breakfast", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()

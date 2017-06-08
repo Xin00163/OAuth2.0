@@ -62,13 +62,6 @@ def fbconnect():
 
     # Use token to get user info from API
     userinfo_url = "https://graph.facebook.com/v2.8/me"
-    '''
-        Due to the formatting for the result from the server token exchange we have to
-        split the token first on commas and select the first index which gives us the key : value
-        for the server access token then we split it on colons to pull out the actual token value
-        and replace the remaining quotes with nothing so that it can be used directly in the graph
-        api calls
-    '''
     token = result.split(',')[0].split(':')[1].replace('"', '')
 
     url = 'https://graph.facebook.com/v2.8/me?access_token=%s&fields=name,id,email' % token
@@ -242,16 +235,14 @@ def gdisconnect():
         # Only disconnect a connected user.
     credentials = login_session.get('credentials')
     if credentials is None:
-        response = make_response(
-            json.dumps('Current user not connected.'), 401)
+        response = make_response(json.dumps('Current user not connected.'), 401)
         response.headers['Content-Type'] = 'application/json'
         return response
     access_token = credentials.access_token
     url = 'https://accounts.google.com/o/oauth2/revoke?token=%s' % access_token
     h = httplib2.Http()
     result = h.request(url, 'GET')[0]
-
-    if result['status'] == '200':
+    if result['status'] != '200':
         # For whatever reason, the given token was invalid.
         response = make_response(
             json.dumps('Failed to revoke token for given user.', 400))
@@ -368,9 +359,10 @@ def newRecipeItem(ingredient_id):
     ingredient = session.query(Ingredient).filter_by(id=ingredient_id).one()
     if login_session['user_id'] != ingredient.user_id:
         return "<script>function myFunction() {alert('You are not authorized to add recipe items to this ingredient. Please create your own ingredient in order to add items.');}</script><body onload='myFunction()''>"
+    else:
         if request.method == 'POST':
-            newItem = RecipeItem(name=request.form['name'], description=request.form['description'],
-                            price=request.form['price'], course=request.form['course'],
+            newItem = RecipeItem(name=request.form['name'], method=request.form['method'],
+                            time_needed=request.form['time_needed'], meal=request.form['meal'],
                             ingredient_id=ingredient_id, user_id=ingredient.user_id)
             session.add(newItem)
             session.commit()
@@ -393,12 +385,12 @@ def editRecipeItem(ingredient_id, recipe_id):
     if request.method == 'POST':
         if request.form['name']:
             editedItem.name = request.form['name']
-        if request.form['description']:
-            editedItem.description = request.form['description']
-        if request.form['price']:
-            editedItem.price = request.form['price']
-        if request.form['course']:
-            editedItem.course = request.form['course']
+        if request.form['method']:
+            editedItem.method = request.form['method']
+        if request.form['time_needed']:
+            editedItem.time_needed = request.form['time_needed']
+        if request.form['meal']:
+            editedItem.meal = request.form['meal']
         session.add(editedItem)
         session.commit()
         flash('Recipe Item Successfully Edited')
@@ -431,7 +423,7 @@ def disconnect():
         if login_session['provider'] == 'google':
             gdisconnect()
             del login_session['gplus_id']
-            del login_session['credentials']
+            del login_session['access_token']
         if login_session['provider'] == 'facebook':
             fbdisconnect()
             del login_session['facebook_id']

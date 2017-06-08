@@ -14,35 +14,35 @@
 			<form action="#" method = "post">
 				<div class="form-group">
 					<label for="name">Name:</label>
-					<input type ="text" maxlength="50" class="form-control" name="name"placeholder="Name of the course">
+					<input type ="text" maxlength="50" class="form-control" name="name" placeholder="Name of the meal">
 
-					<label for="description">Description:</label>
-					<textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the course"></textarea>
+					<label for="method">Method:</label>
+					<textarea class="form-control" maxlength="250" rows="3" name="method" placeholder="Method of the meal"></textarea>
 
-					<label for="price">Price:</label>
+					<label for="time_needed">Time_needed:</label>
 					<div class="input-group">
-						<div class="input-group-addon">$</div>
-						<input type ="text" class="form-control" maxlength="10" name="price" placeholder="Price in $">
+						<div class="input-group-addon">mins</div>
+						<input type ="text" class="form-control" maxlength="10" name="time_needed" placeholder="Time_needed in minutes">
 					</div>
-					<label for="course">Course:</label>
+					<label for="meal">Meal:</label>
 					<div class="radio">
 					  <label>
-					    <input type="radio" name="course" id="course1" value="Appetizer">Appetizer
+					    <input type="radio" name="meal" id="meal1" value="Lunch">Lunch
 					  </label>
 					</div>
 					<div class="radio">
 					  <label>
-					    <input type="radio" name="course" id="course2" value="Entree">Entree
+					    <input type="radio" name="meal" id="meal2" value="Dinner">Dinner
 					  </label>
 					</div>
 					<div class="radio">
 					  <label>
-					    <input type="radio" name="course" id="course3" value="Dessert">Dessert
+					    <input type="radio" name="meal" id="meal3" value="Breakfast">Breakfast
 					  </label>
 					</div>
 					<div class="radio">
 					  <label>
-					    <input type="radio" name="course" id="course4" value="Beverage">Beverage
+					    <input type="radio" name="meal" id="meal4" value="Beverage">Beverage
 					  </label>
 					</div>
 					<button type="submit" class="btn btn-default" id="submit" type="submit">
@@ -52,4 +52,3 @@
 		</div>
 	</div>
 {% endblock %}
-
