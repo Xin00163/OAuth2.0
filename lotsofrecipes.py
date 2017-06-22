@@ -25,362 +25,150 @@ session = DBSession()
 # session.add(User1)
 # session.commit()
 
-# Recipe for UrbanBurger
+
 ingredient1 = Ingredient(user_id=1, name="Beef")
 
 session.add(ingredient1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Quick Beef Stir Fry", method="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     time_needed="$7.50", meal="Dinner", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Quick Beef Stir Fry", method="Heat vegetable oil in a large wok or skillet over medium-high heat; cook and stir beef until browned, 3 to 4 minutes. Move beef to the side of the wok and add broccoli, bell pepper, carrots, green onion, and garlic to the center of the wok. Cook and stir vegetables for 2 minutes. Stir beef into vegetables and season with soy sauce and sesame seeds. Continue to cook and stir until vegetables are tender, about 2 more minutes.",
+                    time_needed="25", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem2)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="French Fries", method="with garlic and parmesan",
-                     time_needed="$2.99", meal="Lunch", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Mushroom Slow Cooker Roast Beef", method="Place the mushrooms in the bottom of a slow cooker; set the roast atop the mushrooms; sprinkle the onion soup mix over the beef and pour the beer over everything; season with black pepper. Set slow cooker to LOW; cook 9 to 10 hours until the meat is easily pulled apart with a fork.",
+                     time_needed="540", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Chicken Burger", method="Juicy grilled chicken patty with tomato mayo and lettuce",
-                     time_needed="$5.50", meal="Dinner", ingredient=ingredient1)
 
-session.add(recipeItem2)
-session.commit()
-
-recipeItem3 = RecipeItem(user_id=1, name="Chocolate Cake", method="fresh baked and served with ice cream",
-                     time_needed="$3.99", meal="Breakfast", ingredient=ingredient1)
+recipeItem3 = RecipeItem(user_id=1, name="Boeuf Bourguignon", method="Heat oil in a skillet over medium heat. Cook onions until tender and transfer to a bowl. Cook and stir beef in the same skillet until browned. Sprinkle flour, marjoram, thyme, and pepper over beef. Pour red wine and beef broth into the skillet; stir well. Reduce heat to low and simmer until beef is tender. Stir onions into the skillet. Add mushrooms.",
+                     time_needed="154", meal="Dinner", ingredient=ingredient1)
 
 session.add(recipeItem3)
 session.commit()
 
-recipeItem4 = RecipeItem(user_id=1, name="Sirloin Burger", method="Made with grade A beef",
-                     time_needed="$7.99", meal="Dinner", ingredient=ingredient1)
+recipeItem4 = RecipeItem(user_id=1, name="Horsey Beef Pretzel Bites", method="Arrange Pretzel Crisps(R) onto a large tray. Top with roast beef and a piece of mozzarella cheese. Add a slice or 2 of red onion. Put a dollop (about 1/4 teaspoon) of horseradish on the onion. Garnish with chives.",
+                     time_needed="50", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem4)
 session.commit()
 
-recipeItem5 = RecipeItem(user_id=1, name="Root Beer", method="16oz of refreshing goodness",
-                     time_needed="$1.99", meal="Beverage", ingredient=ingredient1)
+recipeItem5 = RecipeItem(user_id=1, name="Salisbury Steak", method="In a large bowl, mix together 1/3 cup condensed onion soup with ground beef, bread crumbs, egg, salt and black pepper. Shape into 6 oval patties. In a skillet over medium-high heat, brown both sides of patties. In a small bowl, blend flour and remaining soup until smooth. Mix in ketchup, water, Worcestershire sauce and mustard powder. Pour over meat in skillet. Cover and cook for 20 minutes.",
+                     time_needed="40", meal="Lunch", ingredient=ingredient1)
 
 session.add(recipeItem5)
 session.commit()
 
-recipeItem6 = RecipeItem(user_id=1, name="Iced Tea", method="with Lemon",
-                     time_needed="$.99", meal="Beverage", ingredient=ingredient1)
 
-session.add(recipeItem6)
-session.commit()
-
-recipeItem7 = RecipeItem(user_id=1, name="Grilled Cheese Sandwich",
-                     method="On texas toast with American Cheese", time_needed="$3.49", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem7)
-session.commit()
-
-recipeItem8 = RecipeItem(user_id=1, name="Veggie Burger", method="Made with freshest of ingredients and home grown spices",
-                     time_needed="$5.99", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem8)
-session.commit()
-
-
-# Recipe for Super Stir Fry
-ingredient2 = Ingredient(user_id=1, name="Super Stir Fry")
+ingredient2 = Ingredient(user_id=1, name="Pork")
 
 session.add(ingredient2)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="Chicken Stir Fry", method="With your choice of noodles vegetables and sauces",
-                     time_needed="$7.99", meal="Dinner", ingredient=ingredient2)
+recipeItem1 = RecipeItem(user_id=1, name="Apple Butter Pork Loin", method="Season the pork loins with seasoning salt, and place them in a baking dish. Pour apple juice over the pork, and cover the dish with a lid. Bake for 1 hour. While the pork is roasting, mix together the apple butter, brown sugar, water, cinnamon, and cloves. Remove pork roasts from the oven, and spread with apple butter mixture. Cover, and return to the oven for 2 hours.",
+                     time_needed="195", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Peking Duck",
-                     method=" A famous duck dish from Beijing[1] that has been prepared since the imperial era. The meat is prized for its thin, crisp skin, with authentic versions of the dish serving mostly the skin and little meat, sliced in front of the diners by the cook", time_needed="$25", meal="Dinner", ingredient=ingredient2)
+recipeItem2 = RecipeItem(user_id=1, name="Sweet and Sour Pork",
+                     method="Place cubed pork in a medium bowl, and season with salt, sugar and soy sauce. Mix in the egg white and green onions. Cover, and place in the refrigerator at least 1 hour. Heat oil to 365 degrees F in a large saucepan. Coat the pork with cornstarch, and fry in the heated oil about 10 minutes. Drain on paper towels. Stir in the celery, green bell pepper, and onion, and cook until tender. Mix 1 cup water, 1/4 teaspoon salt, 3/4 cup sugar, apple cider vinegar, ketchup, and 1/2 teaspoon soy sauce. Bring to a boil, and stir in the cooked pork, celery mixture, and the pineapple chunks with juice. Return to boil, and mix in cornstarch and water to thicken.", time_needed="120", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem3 = RecipeItem(user_id=1, name="Spicy Tuna Roll", method="Seared rare ahi, avocado, edamame, cucumber with wasabi soy sauce ",
-                     time_needed="15", meal="Dinner", ingredient=ingredient2)
+recipeItem3 = RecipeItem(user_id=1, name="Delicious Ham and Potato Soup", method="Combine the potatoes, celery, onion, ham and water in a stockpot. Bring to a boil, then cook over medium heat until potatoes are tender, about 10 to 15 minutes. Stir in the chicken bouillon, salt and pepper.In a separate saucepan, melt butter over medium-low heat. Whisk in flour with a fork, and cook, stirring constantly until thick, about 1 minute. Slowly stir in milk as not to allow lumps to form until all of the milk has been added. Continue stirring over medium-low heat until thick, 4 to 5 minutes. Stir the milk mixture into the stockpot, and cook soup until heated through.",
+                     time_needed="45", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem3)
 session.commit()
 
-recipeItem4 = RecipeItem(user_id=1, name="Nepali Momo ", method="Steamed dumplings made with vegetables, spices and meat. ",
-                     time_needed="12", meal="Dinner", ingredient=ingredient2)
+recipeItem4 = RecipeItem(user_id=1, name="NPork Tenderloin in the Slow Cooker ", method="Place pork tenderloin in a slow cooker with the contents of the soup packet. Pour water, wine, and soy sauce over the top, turning the pork to coat. Carefully spread garlic over the pork, leaving as much on top of the roast during cooking as possible. Sprinkle with pepper, cover, and cook on low setting for 4 hours. ",
+                     time_needed="275", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem4)
 session.commit()
 
-recipeItem5 = RecipeItem(user_id=1, name="Beef Noodle Soup", method="A Chinese noodle soup made of stewed or red braised beef, beef broth, vegetables and Chinese noodles.",
-                     time_needed="14", meal="Dinner", ingredient=ingredient2)
+recipeItem5 = RecipeItem(user_id=1, name="Best Grilled Pork Chops", method="Mix water, soy sauce, vegetable oil, lemon pepper seasoning, and minced garlic in a deep bowl; add pork chops and marinate in refrigerator at least 2 hours. Preheat an outdoor grill for medium-high heat and lightly oil the grate. Remove pork chops from the marinade and shake off excess. Discard the remaining marinade. Cook the pork chops on the preheated grill until no longer pink in the center, 5 to 6 minutes per side. An instant-read thermometer inserted into the center should read 145 degrees F (63 degrees C).",
+                     time_needed="135", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem5)
 session.commit()
 
-recipeItem6 = RecipeItem(user_id=1, name="Ramen", method="a Japanese noodle soup dish. It consists of Chinese-style wheat noodles served in a meat- or (occasionally) fish-based broth, often flavored with soy sauce or miso, and uses toppings such as sliced pork, dried seaweed, kamaboko, and green onions.",
-                     time_needed="12", meal="Dinner", ingredient=ingredient2)
+recipeItem6 = RecipeItem(user_id=1, name="BBQ Pork for Sandwiches", method="Pour can of beef broth into slow cooker, and add boneless pork ribs. Cook on High heat for 4 hours, or until meat shreds easily. Remove meat, and shred with two forks. It will seem that it's not working right away, but it will. Preheat oven to 350 degrees F (175 degrees C). Transfer the shredded pork to a Dutch oven or iron skillet, and stir in barbeque sauce. Bake in the preheated oven for 30 minutes, or until heated through.",
+                     time_needed="295", meal="Dinner", ingredient=ingredient2)
 
 session.add(recipeItem6)
 session.commit()
 
 
-# Recipe for Panda Garden
-ingredient1 = Ingredient(user_id=1, name="Panda Garden")
 
-session.add(ingredient1)
+ingredient3 = Ingredient(user_id=1, name="Chicken")
+
+session.add(ingredient3)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="Pho", method="a Vietnamese noodle soup consisting of broth, linguine-shaped rice noodles called banh pho, a few herbs, and meat.",
-                     time_needed="$8.99", meal="Dinner", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Chicken and vegetable pie", method="Preheat oven to 220 C Gas mark 7.In a saucepan, combine chicken, carrots, peas and celery. Add water to cover and boil for 15 minutes. Remove from heat, drain and set aside. In the saucepan over medium heat, cook onion in butter until soft and translucent. Stir in flour, salt, pepper and celery seed. Slowly stir in chicken stock and milk. Simmer over medium-low heat until thick. Remove from heat and set aside. Prepare a 23cm (9 in) pie dish by lining with pastry, reserving pastry to cover. Place the chicken mixture in bottom of the prepared pie dish. Pour hot liquid mixture over. Cover with top pastry, seal edges, and cut away excess pastry. Make several small slits in the top to allow steam to escape. Bake in the preheated oven for 30 to 35 minutes, or until pastry is golden brown and filling is bubbly. Cool for 10 minutes before serving.",
+                     time_needed="70", meal="Dinner", ingredient=ingredient3)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Chinese Dumplings", method="a common Chinese dumpling which generally consists of minced meat and finely chopped vegetables wrapped into a piece of dough skin. The skin can be either thin and elastic or thicker.",
-                     time_needed="$6.99", meal="Lunch", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Chicken jalfrezi", method="Heat the oil in a large deep frying pan over medium-high heat. Add onions and garlic, and cook for about 2 minutes. Add the chicken, and season with turmeric, chilli powder and salt. Fry gently, scraping the bottom of the pan frequently and turning the chicken. Pour in the tomatoes with their juice, cover the pan, and simmer over medium heat for 20 minutes. Uncover, and simmer for another 10 minutes to let the excess liquid evaporate. Add the ghee, cumin, ground coriander, ginger and fresh coriander, and simmer for another 5 to 7 minutes. Serve the chicken pieces with sauce spooned over the top.",
+                     time_needed="75", meal="Lunch", ingredient=ingredient3)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem3 = RecipeItem(user_id=1, name="Gyoza", method="light seasoning of Japanese gyoza with salt and soy sauce, and in a thin gyoza wrapper",
-                     time_needed="$9.95", meal="Dinner", ingredient=ingredient1)
+recipeItem3 = RecipeItem(user_id=1, name="Slow cooker butter chicken", method="Heat the butter and vegetable oil in a large frying pan over medium heat. Stir in the chicken, onion and garlic. Cook and stir until the onion has softened and turned translucent, about 10 minutes. Stir in the curry powder, curry paste, tandoori masala, garam masala and tomato puree until no lumps of tomato puree remain. Pour into a slow cooker, and stir in the cardamom pods, coconut milk and yoghurt. Season to taste with salt. Cook on High 4 to 6 hours, or on Low 6 to 8 hours until the chicken is tender and the sauce has reduced to your desired consistency. ",
+                     time_needed="270", meal="Dinner", ingredient=ingredient3)
 
 session.add(recipeItem3)
 session.commit()
 
-recipeItem4 = RecipeItem(user_id=1, name="Stinky Tofu", method="Taiwanese dish, deep fried fermented tofu served with pickled cabbage.",
-                     time_needed="$6.99", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem4)
-session.commit()
-
-recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", method="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     time_needed="$9.50", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem2)
-session.commit()
 
 
-# Recipe for Thyme for that
-ingredient1 = Ingredient(user_id=1, name="Thyme for That Vegetarian Cuisine ")
+ingredient4 = Ingredient(user_id=1, name="Eggs")
 
 session.add(ingredient1)
 session.commit()
 
 
-recipeItem1 = RecipeItem(user_id=1, name="Tres Leches Cake", method="Rich, luscious sponge cake soaked in sweet milk and topped with vanilla bean whipped cream and strawberries.",
-                     time_needed="$2.99", meal="Breakfast", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Pesto Scrambled Eggs", method="Heat oil in a frying pan over medium heat. In a small bowl, combine egg, Cheddar, salt and pepper. Pour into pan, and cook stirring for 3 to 5 minutes, or until desired doneness. Remove from heat, and stir in pesto.",
+                     time_needed="10", meal="Breakfast", ingredient=ingredient4)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Mushroom risotto", method="Portabello mushrooms in a creamy risotto",
-                     time_needed="$5.99", meal="Dinner", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Curry devilled eggs", method="Cut the eggs in half lengthways. Remove the yolks and put them in a bowl with the paprika, mayonnaise, curry powder, creme fraiche, lemon, salt, Worcestershire and mustard powder. Mix well. Fill each egg white with the yolk mixture. Serve chilled.",
+                     time_needed="15", meal="Breakfast", ingredient=ingredient4)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem3 = RecipeItem(user_id=1, name="Honey Boba Shaved Snow",
-                     method="Milk snow layered with honey boba, jasmine tea jelly, grass jelly, caramel, cream, and freshly made mochi", time_needed="$4.50", meal="Breakfast", ingredient=ingredient1)
-
-session.add(recipeItem3)
-session.commit()
-
-recipeItem4 = RecipeItem(user_id=1, name="Cauliflower Manchurian", method="Golden fried cauliflower florets in a midly spiced soya,garlic sauce cooked with fresh cilantro, celery, chilies,ginger & green onions",
-                     time_needed="$6.95", meal="Lunch", ingredient=ingredient1)
-
-session.add(recipeItem4)
-session.commit()
-
-recipeItem5 = RecipeItem(user_id=1, name="Aloo Gobi Burrito", method="Vegan goodness. Burrito filled with rice, garbanzo beans, curry sauce, potatoes (aloo), fried cauliflower (gobi) and chutney. Nom Nom",
-                     time_needed="$7.95", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem5)
-session.commit()
-
-recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", method="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     time_needed="$6.80", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem2)
-session.commit()
-
-
-# Recipe for Tony's Bistro
-ingredient1 = Ingredient(user_id=1, name="Tony\'s Bistro ")
+ingredient5 = Ingredient(user_id=1, name="Fruit")
 
 session.add(ingredient1)
 session.commit()
 
-
-recipeItem1 = RecipeItem(user_id=1, name="Shellfish Tower", method="Lobster, shrimp, sea snails, crawfish, stacked into a delicious tower",
-                     time_needed="$13.95", meal="Dinner", ingredient=ingredient1)
+recipeItem1 = RecipeItem(user_id=1, name="Groovy green smoothie", method="Place the banana, grapes, yoghurt, apple and spinach into a blender or food processor. Cover, and blend until smooth, stopping frequently to push down anything stuck to the sides. Pour into glasses and serve.",
+                     time_needed="10", meal="Beverage", ingredient=ingredient5)
 
 session.add(recipeItem1)
 session.commit()
 
-recipeItem2 = RecipeItem(user_id=1, name="Chicken and Rice", method="Chicken... and rice",
-                     time_needed="$4.95", meal="Dinner", ingredient=ingredient1)
+recipeItem2 = RecipeItem(user_id=1, name="Bitter and Twisted", method="Put a few ice-cubes in a glass. Pour in bacardi, pineapple and grapefruit juice. Pour into a cocktail mixer and shake. Pour the mixed cocktail into the glass again the add sparkling water. Serve with cherries, pineapple and umbrellas, if you like!",
+                     time_needed="5", meal="Beverage", ingredient=ingredient5)
 
 session.add(recipeItem2)
 session.commit()
 
-recipeItem3 = RecipeItem(user_id=1, name="Mom's Spaghetti", method="Spaghetti with some incredible tomato sauce made by mom",
-                     time_needed="$6.95", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem3)
-session.commit()
-
-recipeItem4 = RecipeItem(user_id=1, name="Choc Full O\' Mint (Smitten\'s Fresh Mint Chip ice cream)",
-                     method="Milk, cream, salt, ..., Liquid nitrogen magic", time_needed="$3.95", meal="Breakfast", ingredient=ingredient1)
-
-session.add(recipeItem4)
-session.commit()
-
-recipeItem5 = RecipeItem(user_id=1, name="Tonkatsu Ramen", method="Noodles in a delicious pork-based broth with a soft-boiled egg",
-                     time_needed="$7.95", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem5)
-session.commit()
-
-
-# Recipe for Andala's
-ingredient1 = Ingredient(user_id=1, name="Andala\'s")
-
-session.add(ingredient1)
-session.commit()
-
-
-recipeItem1 = RecipeItem(user_id=1, name="Lamb Curry", method="Slow cook that thang in a pool of tomatoes, onions and alllll those tasty Indian spices. Mmmm.",
-                     time_needed="$9.95", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem1)
-session.commit()
-
-recipeItem2 = RecipeItem(user_id=1, name="Chicken Marsala", method="Chicken cooked in Marsala wine sauce with mushrooms",
-                     time_needed="$7.95", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem2)
-session.commit()
-
-recipeItem3 = RecipeItem(user_id=1, name="Potstickers", method="Delicious chicken and veggies encapsulated in fried dough.",
-                     time_needed="$6.50", meal="Lunch", ingredient=ingredient1)
-
-session.add(recipeItem3)
-session.commit()
-
-recipeItem4 = RecipeItem(user_id=1, name="Nigiri Sampler", method="Maguro, Sake, Hamachi, Unagi, Uni, TORO!",
-                     time_needed="$6.75", meal="Lunch", ingredient=ingredient1)
-
-session.add(recipeItem4)
-session.commit()
-
-recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", method="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     time_needed="$7.00", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem2)
-session.commit()
-
-
-# Recipe for Auntie Ann's
-ingredient1 = Ingredient(user_id=1, name="Auntie Ann\'s Diner' ")
-
-session.add(ingredient1)
-session.commit()
-
-recipeItem9 = RecipeItem(user_id=1, name="Chicken Fried Steak",
-                     method="Fresh battered sirloin steak fried and smothered with cream gravy", time_needed="$8.99", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem9)
-session.commit()
-
-
-recipeItem1 = RecipeItem(user_id=1, name="Boysenberry Sorbet", method="An unsettlingly huge amount of ripe berries turned into frozen (and seedless) awesomeness",
-                     time_needed="$2.99", meal="Breakfast", ingredient=ingredient1)
-
-session.add(recipeItem1)
-session.commit()
-
-recipeItem2 = RecipeItem(user_id=1, name="Broiled salmon", method="Salmon fillet marinated with fresh herbs and broiled hot & fast",
-                     time_needed="$10.95", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem2)
-session.commit()
-
-recipeItem3 = RecipeItem(user_id=1, name="Morels on toast (seasonal)",
-                     method="Wild morel mushrooms fried in butter, served on herbed toast slices", time_needed="$7.50", meal="Lunch", ingredient=ingredient1)
-
-session.add(recipeItem3)
-session.commit()
-
-recipeItem4 = RecipeItem(user_id=1, name="Tandoori Chicken", method="Chicken marinated in yoghurt and seasoned with a spicy mix(chilli, tamarind among others) and slow cooked in a cylindrical clay or metal oven which gets its heat from burning charcoal.",
-                     time_needed="$8.95", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem4)
-session.commit()
-
-recipeItem2 = RecipeItem(user_id=1, name="Veggie Burger", method="Juicy grilled veggie patty with tomato mayo and lettuce",
-                     time_needed="$9.50", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem2)
-session.commit()
-
-recipeItem10 = RecipeItem(user_id=1, name="Spinach Ice Cream", method="vanilla ice cream made with organic spinach leaves",
-                      time_needed="$1.99", meal="Breakfast", ingredient=ingredient1)
-
-session.add(recipeItem10)
-session.commit()
-
-
-# Recipe for Cocina Y Amor
-ingredient1 = Ingredient(user_id=1, name="Cocina Y Amor ")
-
-session.add(ingredient1)
-session.commit()
-
-
-recipeItem1 = RecipeItem(user_id=1, name="Super Burrito Al Pastor",
-                     method="Marinated Pork, Rice, Beans, Avocado, Cilantro, Salsa, Tortilla", time_needed="$5.95", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem1)
-session.commit()
-
-recipeItem2 = RecipeItem(user_id=1, name="Cachapa", method="Golden brown, corn-based Venezuelan pancake; usually stuffed with queso telita or queso de mano, and possibly lechon. ",
-                     time_needed="$7.99", meal="Dinner", ingredient=ingredient1)
-
-session.add(recipeItem2)
-session.commit()
-
-
-ingredient1 = Ingredient(user_id=1, name="State Bird Provisions")
-session.add(ingredient1)
-session.commit()
-
-recipeItem1 = RecipeItem(user_id=1, name="Chantrelle Toast", method="Crispy Toast with Sesame Seeds slathered with buttery chantrelle mushrooms",
-                     time_needed="$5.95", meal="Lunch", ingredient=ingredient1)
-
-session.add(recipeItem1)
-session.commit
-
-recipeItem1 = RecipeItem(user_id=1, name="Guanciale Chawanmushi",
-                     method="Japanese egg custard served hot with spicey Italian Pork Jowl (guanciale)", time_needed="$6.95", meal="Breakfast", ingredient=ingredient1)
-
-session.add(recipeItem1)
-session.commit()
-
-
-recipeItem1 = RecipeItem(user_id=1, name="Lemon Curd Ice Cream Sandwich",
-                     method="Lemon Curd Ice Cream Sandwich on a chocolate macaron with cardamom meringue and cashews", time_needed="$4.25", meal="Breakfast", ingredient=ingredient1)
-
-session.add(recipeItem1)
-session.commit()
 
 
 print "added recipe items!"
