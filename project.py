@@ -30,8 +30,18 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
+from functools import wraps
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if "username" not in login_session:
+            return redirect('/login')
+        return f(*args, **kwargs)
+    return decorated_function
 
-# Create anti-forgery state token
+
+
+        # Create anti-forgery state token
 @app.route('/login')
 def showLogin():
     state = ''.join(random.choice(string.ascii_uppercase + string.digits)
@@ -285,9 +295,10 @@ def showIngredients():
 
 
 @app.route('/ingredient/new/', methods=['GET', 'POST'])
+@login_required
 def newIngredient():
-    if 'username' not in login_session:
-        return redirect('/login')
+    # if 'username' not in login_session:
+    #     return redirect('/login')
     if request.method == 'POST':
         newIngredient = Ingredient(
             name=request.form['name'], user_id=login_session['user_id'])
@@ -302,13 +313,16 @@ def newIngredient():
 
 
 @app.route('/ingredient/<int:ingredient_id>/edit/', methods=['GET', 'POST'])
+@login_required
 def editIngredient(ingredient_id):
     editedIngredient = session.query(
         Ingredient).filter_by(id=ingredient_id).one()
-    if 'username' not in login_session:
-        return redirect('/login')
+    # if 'username' not in login_session:
+    #     return redirect('/login')
     if editedIngredient.user_id != login_session['user_id']:
-        return "<script>function myFunction() {alert('You are not authorized to edit this ingredient. Please create your own ingredient in order to edit.');}</script><body onload='myFunction()''>"
+        return ("<script>function myFunction() {alert('You are not authorized "
+                "to edit this ingredient. Please create your own ingredient in "
+                "order to edit.');}</script><body onload='myFunction()''>")
     if request.method == 'POST':
         if request.form['name']:
             editedIngredient.name = request.form['name']
@@ -320,13 +334,16 @@ def editIngredient(ingredient_id):
 
 # Delete a ingredient
 @app.route('/ingredient/<int:ingredient_id>/delete/', methods=['GET', 'POST'])
+@login_required
 def deleteIngredient(ingredient_id):
     ingredientToDelete = session.query(
         Ingredient).filter_by(id=ingredient_id).one()
-    if 'username' not in login_session:
-        return redirect('/login')
+    # if 'username' not in login_session:
+    #     return redirect('/login')
     if ingredientToDelete.user_id != login_session['user_id']:
-        return "<script>function myFunction() {alert('You are not authorized to delete this ingredient. Please create your own ingredient in order to delete.');}</script><body onload='myFunction()''>"
+        return ("<script>function myFunction() {alert('You are not authorized to "
+        "delete this ingredient. Please create your own ingredient in order to "
+        "delete.');}</script><body onload='myFunction()''>")
     if request.method == 'POST':
         session.delete(ingredientToDelete)
         flash('%s Successfully Deleted' % ingredientToDelete.name)
@@ -353,12 +370,15 @@ def showRecipe(ingredient_id):
 
 # Create a new recipe item
 @app.route('/ingredient/<int:ingredient_id>/recipe/new/', methods=['GET', 'POST'])
+@login_required
 def newRecipeItem(ingredient_id):
-    if 'username' not in login_session:
-        return redirect('/login')
+    # if 'username' not in login_session:
+    #     return redirect('/login')
     ingredient = session.query(Ingredient).filter_by(id=ingredient_id).one()
     if login_session['user_id'] != ingredient.user_id:
-        return "<script>function myFunction() {alert('You are not authorized to add recipe items to this ingredient. Please create your own ingredient in order to add items.');}</script><body onload='myFunction()''>"
+        return ("<script>function myFunction() {alert('You are not authorized to "
+        "add recipe items to this ingredient. Please create your own ingredient "
+        "in order to add items.');}</script><body onload='myFunction()''>")
     else:
         if request.method == 'POST':
             newItem = RecipeItem(name=request.form['name'], method=request.form['method'],
@@ -375,13 +395,16 @@ def newRecipeItem(ingredient_id):
 
 
 @app.route('/ingredient/<int:ingredient_id>/recipe/<int:recipe_id>/edit', methods=['GET', 'POST'])
+@login_required
 def editRecipeItem(ingredient_id, recipe_id):
-    if 'username' not in login_session:
-        return redirect('/login')
+    # if 'username' not in login_session:
+    #     return redirect('/login')
     editedItem = session.query(RecipeItem).filter_by(id=recipe_id).one()
     ingredient = session.query(Ingredient).filter_by(id=ingredient_id).one()
     if login_session['user_id'] != ingredient.user_id:
-        return "<script>function myFunction() {alert('You are not authorized to edit recipe items to this ingredient. Please create your own ingredient in order to edit items.');}</script><body onload='myFunction()''>"
+        return ("<script>function myFunction() {alert('You are not authorized to "
+        "edit recipe items to this ingredient. Please create your own ingredient "
+        "in order to edit items.');}</script><body onload='myFunction()''>")
     if request.method == 'POST':
         if request.form['name']:
             editedItem.name = request.form['name']
@@ -396,18 +419,22 @@ def editRecipeItem(ingredient_id, recipe_id):
         flash('Recipe Item Successfully Edited')
         return redirect(url_for('showRecipe', ingredient_id=ingredient_id))
     else:
-        return render_template('editrecipeitem.html', ingredient_id=ingredient_id, recipe_id=recipe_id, item=editedItem)
+        return render_template('editrecipeitem.html', ingredient_id=ingredient_id,
+                                recipe_id=recipe_id, item=editedItem)
 
 
 # Delete a recipe item
 @app.route('/ingredient/<int:ingredient_id>/recipe/<int:recipe_id>/delete', methods=['GET', 'POST'])
+@login_required
 def deleteRecipeItem(ingredient_id, recipe_id):
-    if 'username' not in login_session:
-        return redirect('/login')
+    # if 'username' not in login_session:
+    #     return redirect('/login')
     ingredient = session.query(Ingredient).filter_by(id=ingredient_id).one()
     itemToDelete = session.query(RecipeItem).filter_by(id=recipe_id).one()
     if login_session['user_id'] != ingredient.user_id:
-        return "<script>function myFunction() {alert('You are not authorized to delete recipe items to this ingredient. Please create your own ingredient in order to delete items.');}</script><body onload='myFunction()''>"
+        return ("<script>function myFunction() {alert('You are not authorized to "
+        "delete recipe items to this ingredient. Please create your own ingredient "
+        "in order to delete items.');}</script><body onload='myFunction()''>")
     if request.method == 'POST':
         session.delete(itemToDelete)
         session.commit()

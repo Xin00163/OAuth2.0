@@ -1,6 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from sqlalchemy.orm import backref
 from sqlalchemy import create_engine
 
 Base = declarative_base()
@@ -40,7 +41,7 @@ class RecipeItem(Base):
     time_needed = Column(String(8))
     meal = Column(String(250))
     ingredient_id = Column(Integer,ForeignKey('ingredient.id'))
-    ingredient = relationship(Ingredient)
+    ingredient = relationship(Ingredient,backref=backref('recipe_item', cascade='all, delete'))
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
